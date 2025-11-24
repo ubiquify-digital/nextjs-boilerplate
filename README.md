@@ -1,8 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Boilerplate
 
-## Getting Started
+This is a modern, opinionated boilerplate for building scalable frontend applications using **Next.js 15** (App Router). It comes pre-configured with essential tools for code quality, state management, and type safety.
 
-First, run the development server:
+## 🚀 Features
+
+- **[Next.js 15](https://nextjs.org/)**: The latest version with App Router for high-performance server-side rendering and static generation.
+- **[TypeScript](https://www.typescriptlang.org/)**: Static type checking for better developer experience and code reliability.
+- **[Tailwind CSS](https://tailwindcss.com/)**: Utility-first CSS framework for rapid UI development.
+- **[Zustand](https://github.com/pmndrs/zustand)**: A small, fast, and scalable bearbones state-management solution.
+- **[Zod](https://zod.dev/)**: TypeScript-first schema declaration and validation library (used for environment variables and data validation).
+- **[Axios](https://axios-http.com/)**: Promise based HTTP client for the browser and node.js.
+- **Code Quality**:
+  - **[ESLint](https://eslint.org/)**: Pluggable JavaScript linter.
+  - **[Prettier](https://prettier.io/)**: Opinionated code formatter.
+  - **[Husky](https://typicode.github.io/husky/)**: Git hooks made easy.
+  - **[Lint-staged](https://github.com/okonet/lint-staged)**: Run linters against staged git files.
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+Ensure you have Node.js installed. We recommend using the version specified in `.nvmrc` (if available) or the latest LTS version.
+
+### Installation
+
+1.  Clone the repository:
+
+    ```bash
+    git clone <repository-url>
+    cd ubi-nextjs-boilerplate
+    ```
+
+2.  Install dependencies:
+
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    # or
+    bun install
+    ```
+
+3.  Set up environment variables:
+    - Copy `.env.example` to `.env.local` (if it exists) or create a `.env.local` file.
+    - Define the required variables as per `src/utils/env.ts`.
+
+### Running the Development Server
 
 ```bash
 npm run dev
@@ -16,21 +61,44 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📜 Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Script            | Description                                                    |
+| :---------------- | :------------------------------------------------------------- |
+| `npm run dev`     | Starts the development server on `localhost:3000`.             |
+| `npm run build`   | Builds the application for production.                         |
+| `npm run start`   | Starts the production server (requires `npm run build` first). |
+| `npm run lint`    | Runs ESLint to catch code errors.                              |
+| `npm run format`  | Formats all files using Prettier.                              |
+| `npm run prepare` | Sets up Husky git hooks.                                       |
 
-## Learn More
+## 📂 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/          # Next.js App Router pages and layouts
+├── store/        # Zustand state management stores
+├── types/        # TypeScript type definitions
+├── utils/        # Utility functions and helpers (e.g., env validation)
+└── ...
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌿 Branch Naming
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+We enforce a strict branch naming convention to keep our repository organized. All branches must start with one of the following prefixes:
 
-## Deploy on Vercel
+- `feat/`: For new features (e.g., `feat/user-auth`)
+- `hot/`: For hotfixes (e.g., `hot/fix-login-bug`)
+- `enhancement/`: For improvements (e.g., `enhancement/improve-performance`)
+- `bug/`: For bug fixes (e.g., `bug/form-validation`)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+> [!IMPORTANT]
+> Husky will reject commits on branches that do not follow this pattern.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤝 Contributing
+
+1.  Fork the repository.
+2.  Create a new branch (`git checkout -b feature/amazing-feature`).
+3.  Commit your changes (`git commit -m 'Add some amazing feature'`).
+4.  Push to the branch (`git push origin feature/amazing-feature`).
+5.  Open a Pull Request.
