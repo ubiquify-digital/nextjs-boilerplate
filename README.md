@@ -7,6 +7,7 @@ This is a modern, opinionated boilerplate for building scalable frontend applica
 - **[Next.js 15](https://nextjs.org/)**: The latest version with App Router for high-performance server-side rendering and static generation.
 - **[TypeScript](https://www.typescriptlang.org/)**: Static type checking for better developer experience and code reliability.
 - **[Tailwind CSS](https://tailwindcss.com/)**: Utility-first CSS framework for rapid UI development.
+- **[shadcn/ui](https://ui.shadcn.com/)**: Re-usable components built using Tailwind CSS.
 - **[Zustand](https://github.com/pmndrs/zustand)**: A small, fast, and scalable bearbones state-management solution.
 - **[Zod](https://zod.dev/)**: TypeScript-first schema declaration and validation library (used for environment variables and data validation).
 - **[Axios](https://axios-http.com/)**: Promise based HTTP client for the browser and node.js.
@@ -72,11 +73,28 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 | `npm run format`  | Formats all files using Prettier.                              |
 | `npm run prepare` | Sets up Husky git hooks.                                       |
 
+## 🎨 Adding UI Components
+
+This project uses **shadcn/ui**. To add a new component, use the following command:
+
+```bash
+npx shadcn@latest add <component-name>
+```
+
+Example:
+
+```bash
+npx shadcn@latest add button
+```
+
+This will install the component and its dependencies into `src/components/ui`.
+
 ## 📂 Project Structure
 
 ```
 src/
 ├── app/          # Next.js App Router pages and layouts
+├── components/   # Reusable UI components (shadcn/ui)
 ├── store/        # Zustand state management stores
 ├── types/        # TypeScript type definitions
 ├── utils/        # Utility functions and helpers (e.g., env validation)
